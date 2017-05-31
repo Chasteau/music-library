@@ -36,39 +36,13 @@ function returnPlaylists(currentPlaylist) {
     return (playlistId + ": " + playlistName + " - " + numberOfTracks+ " tracks" );
 }
 
-
-
 var printPlaylists = function () {
-
   var libraryPlaylists =  library.playlists;
   for (var currentPlaylist in libraryPlaylists) {
-
-    //console.log(libraryPlaylist[currentPlaylist].name);
-
     if(libraryPlaylists.hasOwnProperty(currentPlaylist)) {
-
       console.log(returnPlaylists(libraryPlaylists[currentPlaylist]));
-
-    // access playlist object to get key name
-    // var playlistId = libraryPlaylists[currentPlaylist].id;
-    //console.log(playlistId);
-
-    // once we have id we need to get name of playlist
-    // var playlistName = libraryPlaylists[currentPlaylist].name;
-    //console.log(playlistName);
-
-    // then we need to get number of tracks (.length)
-
-    // var numberOfTracks = libraryPlaylists[currentPlaylist].tracks.length;
-    //console.log(numberOfTracks);
-    // print results as one string.
-
-    // console.log(playlistId + ": " + playlistName + " - " + numberOfTracks+ " tracks" );
-
     }
-
   }
-
 };
 
 printPlaylists();
@@ -79,33 +53,21 @@ printPlaylists();
 // t02: Model View Controller by James Dempsey (WWDC 2003)
 // t03: Four Thirty-Three by John Cage (Woodstock 1952)
 
-var printTracks = function () {
+function returnTracks(currentTrack) {
+    var trackId = currentTrack.id;
+    var trackName = currentTrack.name;
+    var trackArtist = currentTrack.artist;
+    var trackAlbum = currentTrack.album;
+    return (trackId + ": " + trackName + " by " + trackArtist + " (" + trackAlbum +")" );
+}
 
+var printTracks = function () {
     var libraryTracks =  library.tracks;
     for (var currentTrack in libraryTracks) {
-
-    //console.log(libraryPlaylist[currentTrack].name);
-
     if(libraryTracks.hasOwnProperty(currentTrack)) {
-
-    // access playlist object to get key name
-    var trackId = libraryTracks[currentTrack].id;
-    //console.log(trackId);
-
-    // once we have id we need to get name of playlist
-    var trackName = libraryTracks[currentTrack].name;
-    //console.log(trackName);
-
-    var trackArtist = libraryTracks[currentTrack].artist;
-
-    var trackAlbum = libraryTracks[currentTrack].album;
-
-    console.log(trackId + ": " + trackName + " by " + trackArtist + " (" + trackAlbum +")" );
-
+      console.log(returnTracks(libraryTracks[currentTrack]));
     }
-
   }
-
 }
 
 printTracks();
