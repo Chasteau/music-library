@@ -125,9 +125,9 @@ var addPlaylist = function (name) {
   library.playlists[id] = {id: id, name: name, tracks: []};
 }
 
-addPlaylist("new playlist");
+//addPlaylist("new playlist");
 
-printPlaylists();
+//printPlaylists();
 
 
 // STRETCH:
