@@ -86,7 +86,7 @@ var printPlaylist = function (playlistId) {
   }
 }
 
-printPlaylist("p02");
+//printPlaylist("p02");
 
 // adds an existing track to an existing playlist
 
@@ -94,11 +94,11 @@ var addTrackToPlaylist = function (trackId, playlistId) {
 
 // navigate into library.playlists.playlistId.tracks and push trackID.
 library.playlists[playlistId].tracks.push(trackId);
-printPlaylist(playlistId);
+//printPlaylist(playlistId);
 
 }
 
-addTrackToPlaylist("t02","p02");
+//addTrackToPlaylist("t02","p02");
 
 
 // generates a unique id
@@ -106,15 +106,21 @@ addTrackToPlaylist("t02","p02");
 
 var uid = function() {
   return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
+
 }
 
 
-// adds a track to the library
+// adds a uniquew new track to the library using uid
 
 var addTrack = function (name, artist, album) {
-
+  // we need create an id
+  var id = "t" + uid();
+  library.tracks[id] = {id: id, name: name, artist: artist, album: album};
 }
 
+addTrack("joe", "fred", "album");
+
+printTracks();
 
 // adds a playlist to the library
 
