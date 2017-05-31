@@ -31,9 +31,36 @@ var library = {
 
 var printPlaylists = function () {
 
-}
+  var libraryPlaylists =  library.playlists;
+  for (var currentPlaylist in libraryPlaylists) {
 
+    //console.log(libraryPlaylist[currentPlaylist].name);
 
+    if(libraryPlaylists.hasOwnProperty(currentPlaylist)) {
+
+    // access playlist object to get key name
+    var playlistId = libraryPlaylists[currentPlaylist].id;
+    //console.log(playlistId);
+
+    // once we have id we need to get name of playlist
+    var playlistName = libraryPlaylists[currentPlaylist].name;
+    //console.log(playlistName);
+
+    // then we need to get number of tracks (.length)
+
+    var numberOfTracks = libraryPlaylists[currentPlaylist].tracks.length;
+    //console.log(numberOfTracks);
+    // print results as one string.
+
+    console.log(playlistId + ": " + playlistName + " - " + numberOfTracks+ " tracks" );
+
+    }
+
+  }
+
+};
+
+printPlaylists();
 // prints a list of all tracks, in the form:
 // t01: Code Monkey by Jonathan Coulton (Thing a Week Three)
 // t02: Model View Controller by James Dempsey (WWDC 2003)
