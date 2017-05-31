@@ -118,15 +118,16 @@ var addTrack = function (name, artist, album) {
   library.tracks[id] = {id: id, name: name, artist: artist, album: album};
 }
 
-addTrack("joe", "fred", "album");
-
-printTracks();
-
 // adds a playlist to the library
 
 var addPlaylist = function (name) {
-
+  var id = "p" + uid();
+  library.playlists[id] = {id: id, name: name, tracks: []};
 }
+
+addPlaylist("new playlist");
+
+printPlaylists();
 
 
 // STRETCH:
